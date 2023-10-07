@@ -66,7 +66,7 @@
     cursor: pointer;
 }
 .menu-item +.menu-item{
-    margin-left: 50px;
+    margin-left: 60px;
 }
 
 #body{
@@ -105,12 +105,17 @@
 }
 #footer .menu-footer-item{
     display: inline-block;
+    position: relative;
+    margin: 0 10px;
 }
-.menu-footer-item:not(:last-child)::after{
+.menu-footer-item:not(:first-child)::after{
     content: "";
     position: absolute;
-    left: 0;
+    left: -10px;
     border-left: 1px solid #D77B00;
+    height: 1em;
+    top: 50%;
+    transform: translateY(-50%);
 }
 #footer .menu-footer-item a{
     display: block;
