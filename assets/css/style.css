@@ -27,6 +27,9 @@
     background-color: #FFD8A4;
     color: #5F496A;
 }
+.highlight-error-input{
+    border: 2px solid red;
+}
 .selectProductItem{
     background-color: #D3921B;
 }
@@ -223,13 +226,14 @@
 #main-register-product{
     display: flex;
     justify-content: center;
+    border-bottom: 1px solid #000;
 }
 
 #main-register-product button{
     margin: 4px;
     background-color: #fff;
     border: 1px solid #D3721B;
-    padding: 2px 12px;
+    padding: 4px 12px;
     cursor: pointer;
     color: purple;
 }
