@@ -27,6 +27,9 @@
     background-color: #FFD8A4;
     color: #5F496A;
 }
+.selectProductItem{
+    background-color: #D3921B;
+}
 #header{
     margin-top: 4px;
     border-radius: 10px;
@@ -138,6 +141,101 @@
 }
 #main-register .customer-info>label{
     font-size: 15px;
+}
+
+#main-register .errorMessage{
+    width: 100%;
+    text-align: right; 
+}
+
+#main-register .errorMessage>span{
+    width: 50%;
+    text-align:left;
+    display: inline-block;
+    color: red;
+    font-size: 15px;
+}
+
+#main-product {
+    display: flex;
+}
+
+#main-product .listProduct,
+#main-product .productSelected{
+    width: 45%;
+}
+#main-product .listProduct-title{
+    color: #D3921B;
+    text-align: right;
+    margin-bottom: 8px;
+}
+#main-product .productSelected-title{
+    color: #D3921B;
+    margin-bottom: 8px;
+}
+#main-product .listProduct-body,
+#main-product .productSelected-body{
+    max-height: 350px;
+    height: 350px;
+    overflow-y: auto;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+}
+#main-product .productItem{
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    height: 60px;
+    margin: 4px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 4px;
+    cursor: pointer;
+}
+#main-product .productItem:hover{
+    background-color: #D3921B;
+}
+#main-product .productItem>img{
+    height: 50px;
+}
+#main-product .productItem>p{
+    font-size: 18px;
+    font-weight: bold;
+}
+#main-product .productItem>span{
+    color: #AC3100;
+    font-weight: bold;
+    
+}
+#main-product .selectBtns{
+    width: 10%;
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#main-product .selectBtns button{
+    width: 30px;
+    height: 20px;
+    margin: 4px 0;
+}
+#main-register-product{
+    display: flex;
+    justify-content: center;
+}
+
+#main-register-product button{
+    margin: 4px;
+    background-color: #fff;
+    border: 1px solid #D3721B;
+    padding: 2px 12px;
+    cursor: pointer;
+    color: purple;
+}
+#main-register-product button:hover{
+    color: #fff;
+    background-color:#D3721B ;
 }
 #side + #main{
     border-left: 1px #2860d0 dotted;

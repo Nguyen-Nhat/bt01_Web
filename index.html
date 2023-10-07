@@ -33,14 +33,17 @@
                         <label for="username">Họ và tên:</label>
                         <input type="text" name="username" id="username">
                     </div>
+                    <div class="errorMessage username-error display-none"><span></span></div>
                     <div class="customer-info">
                         <label for="address">Địa chỉ:</label>
                         <input type="text" name="address" id="address">
                     </div>
+                    <div class="errorMessage address-error display-none"><span></span></div>
                     <div class="customer-info">
                         <label for="phone">Điện thoại:</label>
                         <input type="tel" name="phone" id="phone">
                     </div>
+                    <div class="errorMessage phone-error display-none"><span></span></div>
                     <div class="customer-info">
                         <label for="">Giới tính:</label>
                         <div class="gender-option">
@@ -54,10 +57,32 @@
                         <label for="deliveryDate">Ngày giao hàng:</label>
                         <input type="date" name="deliveryDate" id="deliveryDate">
                     </div>
+                    <div class="errorMessage deliveryDate-error display-none"><span></span></div>
                     <div class="customer-info">
                         <label for="email">Email:</label>
                         <input type="email" name="email" id="email">
                     </div>
+                    <div class="errorMessage mail-error display-none"><span></span></div>
+                </div>
+                <div id="main-product">
+                    <div class="listProduct">
+                        <div class="listProduct-title">Danh sách sản phẩm</div>
+                        <div class="listProduct-body"></div>
+                    </div>
+                    <div class="selectBtns">
+                        <button type="button" id="select">&gt;</button>
+                        <button type="button" id="selectAll">&raquo;</button>
+                        <button type="button" id="deselect">&lt;</button>
+                        <button type="button" id="deselectAll">&laquo;</button>
+                    </div>
+                    <div class="productSelected">
+                        <div class="productSelected-title">Sản phẩm đã chọn</div>
+                        <div class="productSelected-body"></div>
+                    </div>
+                </div>
+                <div id="main-register-product">
+                    <button type="button" id="registerProduct">Đăng ký</button>
+                    <button type="button" id="deleteRegisterList">Xóa hết</button>
                 </div>
             </div>
         </div>
@@ -72,6 +97,8 @@
             </ul>
         </div>
     </div>
+    <script src="JS/register.js"></script>
     <script src="JS/side.js"></script>
+    <script src="JS/product.js"></script>
 </body>
 </html>
