@@ -26,7 +26,40 @@
 
             </div>
             <div id="main">
-
+                <div id="main-header">
+                    <p>Đăng ký đơn hàng</p>
+                </div>
+                <div id="main-register">
+                    <div class="customer-info">
+                        <label for="username">Họ và tên:</label>
+                        <input type="text" name="username" id="username">
+                    </div>
+                    <div class="customer-info">
+                        <label for="address">Địa chỉ:</label>
+                        <input type="text" name="address" id="address">
+                    </div>
+                    <div class="customer-info">
+                        <label for="phone">Điện thoại:</label>
+                        <input type="tel" name="phone" id="phone">
+                    </div>
+                    <div class="customer-info">
+                        <label for="">Giới tính:</label>
+                        <div class="gender-option">
+                            <input type="radio" name="gender" id="male" value="male" checked>
+                            <label for="male">Nam</label>
+                            <input type="radio" name="gender" id="female" value="female">
+                            <label for="female">Nữ</label>
+                        </div>
+                    </div>
+                    <div class="customer-info">
+                        <label for="deliveryDate">Ngày giao hàng:</label>
+                        <input type="date" name="deliveryDate" id="deliveryDate">
+                    </div>
+                    <div class="customer-info">
+                        <label for="email">Email:</label>
+                        <input type="email" name="email" id="email">
+                    </div>
+                </div>
             </div>
         </div>
         <div id="footer">
@@ -40,5 +73,6 @@
             </ul>
         </div>
     </div>
+    <script src="index.js"></script>
 </body>
 </html>

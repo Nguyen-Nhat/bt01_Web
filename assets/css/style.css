@@ -39,7 +39,7 @@
     letter-spacing: 4px;
     font-weight: bold;
     color: #A1DADA;
-    text-shadow: -1px 0 black, 0 1px black,1px 0 black, 0 -1px black
+    text-shadow: -1.5px 0 black, 0 1.5px black,1.5px 0 black, 0 -1.5px black
 }
 #nav{
     display: inline-block;
@@ -82,6 +82,36 @@
 }
 #main{
     width: calc(100% - 360px);
+    padding: 16px 16px 0 16px ;
+}
+#main-header{
+    height: 3em;
+    text-align: center;
+    border-bottom: 1px solid #000;
+}
+#main-header p{
+    text-transform: uppercase;
+    font-weight: bold;
+    color: #D3921B;
+    font-size: 24px;
+}
+#main-register{
+    padding-top: 8px;
+}
+#main-register .customer-info{
+    text-align: right;
+    margin: 4px 0;
+}
+#main-register .customer-info>input,
+#main-register .customer-info>.gender-option{
+    width: 50%;
+    display: inline-block;
+}
+#main-register .customer-info>.gender-option{
+    text-align: left;
+}
+#main-register .customer-info>label{
+    font-size: 15px;
 }
 #side + #main{
     border-left: 1px #2860d0 dotted;
