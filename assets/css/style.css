@@ -1,0 +1,122 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+#app{
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    display: block;
+}
+.nav-menu-selected{
+    color: #FFED5E !important;
+}
+.footer-menu-selected{
+    background-color: #D77B00 !important;
+    color: #FFE7C7 !important;
+}
+.odd-new-head-bdcolor{
+    background-color: #D77B00;
+    color: #FFE7C7;
+}
+.even-new-head-bdcolor{
+    background-color: #FFD8A4;
+    color: #5F496A;
+}
+#header{
+    margin-top: 4px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.6);
+    width: 100%;
+    height: 6em;
+    background-image: linear-gradient(#2860d0,#809ACE);
+    text-align: center;
+    line-height: 6em;
+}
+#header p{
+    font-size: 30px;
+    letter-spacing: 4px;
+    font-weight: bold;
+    color: #A1DADA;
+    text-shadow: -1px 0 black, 0 1px black,1px 0 black, 0 -1px black
+}
+#nav{
+    display: inline-block;
+    display: flex;
+    justify-content: center;
+    height: 2em;
+    transform: translateY(-15px);
+}
+#nav ul{
+    list-style-type: none;
+    background-color: #BDC6DE;
+    padding:0 8px;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    box-shadow: 0 0 5px rgba(0,0,0,0.6);
+}
+#nav .menu-item{
+    display: inline-block;
+    color: #2860d0;
+}
+#nav .menu-item:hover{
+    color: #FFED5E;
+    cursor: pointer;
+}
+.menu-item +.menu-item{
+    margin-left: 50px;
+}
+
+#body{
+    border-top: 1px solid #2860d0;
+    border-bottom: 1px solid #2860d0;
+    height: 1000px;
+    display: flex;
+    flex-flow: row;
+}
+#side{
+    width: 360px;
+    margin: 8px;
+}
+#main{
+    width: calc(100% - 360px);
+}
+#side + #main{
+    border-left: 1px #2860d0 dotted;
+}
+#footer{
+    height: 1.5em;
+    background-color: #FFD8A4;
+    margin: 8px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#footer .copyright{
+    margin-right: 20px;
+    display: inline-block;
+    color: #D77B00;
+}
+#footer #menu-footer{
+    list-style-type: none;
+    
+}
+#footer .menu-footer-item{
+    display: inline-block;
+}
+.menu-footer-item:not(:last-child)::after{
+    content: "";
+    position: absolute;
+    left: 0;
+    border-left: 1px solid #D77B00;
+}
+#footer .menu-footer-item a{
+    display: block;
+    color: #D77B00;
+}
+#footer .menu-footer-item a:hover{
+    background-color: #D77B00;
+    color: #FFE7C7;
+}
