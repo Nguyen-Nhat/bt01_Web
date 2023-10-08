@@ -44,8 +44,8 @@ const products = [
 var listProductTable = document.querySelector('#main-product .listProduct-body');
 for(let i in products){
     listProductTable.innerHTML += `
-        <div class="productItem">
-            <img src="${products[i].img}" alt="">
+        <div id="productItem${i}" class="productItem" draggable="true">
+            <img src="${products[i].img}" alt="" draggable="false">
             <p>${products[i].name}</p>
             <span>$${products[i].price}</span>
         </div>                            

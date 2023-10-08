@@ -228,8 +228,6 @@ selectProductBtn.addEventListener('click', e=> {
         productSelected.appendChild(children[i - temp]);
         temp++;
     }
-    console.log(productSelectedIndex);
-    console.log(productRemainIndex);
 })
 deselectProductBtn.addEventListener('click',e=>{
     let index = [];
@@ -249,8 +247,6 @@ deselectProductBtn.addEventListener('click',e=>{
         children[i - temp].classList.remove('selectProductItem');
         temp++;
     }
-    console.log(productSelectedIndex);
-    console.log(productRemainIndex);
 })
 selectAllProductBtn.addEventListener('click', e=>{
     while(productRemain.firstElementChild){
@@ -261,8 +257,6 @@ selectAllProductBtn.addEventListener('click', e=>{
     }    
     productSelectedIndex = productSelectedIndex.concat(productRemainIndex);
     productRemainIndex = [];
-    console.log(productSelectedIndex);
-    console.log(productRemainIndex);
 })
 
 deselectAllProductBtn.addEventListener('click', e=>{
@@ -274,6 +268,41 @@ deselectAllProductBtn.addEventListener('click', e=>{
     }
     productRemainIndex = productRemainIndex.concat(productSelectedIndex);
     productSelectedIndex = [];
-    console.log(productSelectedIndex);
-    console.log(productRemainIndex);
+})
+
+
+for(let item of ProductItems){
+    item.addEventListener('dragstart',e=>{
+        e.dataTransfer.setData("idProduct",item.id);
+    })
+}
+
+function allowDrop(e){
+    e.preventDefault();
+}
+productSelected.addEventListener('dragover', allowDrop);
+productRemain.addEventListener('dragover', allowDrop);
+
+productRemain.addEventListener('drop', e=>{
+    let idProduct = e.dataTransfer.getData("idProduct")
+    let index = idProduct[idProduct.length - 1];
+    let productView = document.getElementById(idProduct);
+    if(productView.parentElement === productRemain){
+        return;
+    }
+    productRemain.appendChild(productView);
+    productRemainIndex.push(index);
+    productSelectedIndex.splice(productSelectedIndex.indexOf(index), 1);
+})
+
+productSelected.addEventListener('drop', e => {
+    let idProduct = e.dataTransfer.getData("idProduct")
+    let index = idProduct[idProduct.length - 1];
+    let productView = document.getElementById(idProduct);
+    if(productView.parentElement === productSelected){
+        return;
+    }
+    productSelected.appendChild(productView);
+    productSelectedIndex.push(index);
+    productRemainIndex.splice(productRemainIndex.indexOf(index), 1);
 })
