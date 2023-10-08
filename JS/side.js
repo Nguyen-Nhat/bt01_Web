@@ -26,10 +26,10 @@ for(let i = 0; i < news.length;i++){
     sideContent.innerHTML += `
         <div class="news-blog">
             <div class="news-title ${type} open">
-                <i class="ti-arrow-down"></i>
-                <i class="ti-control-play display-none"></i>
+                <i class="ti-arrow-down arrow-down"></i>
+                <i class="ti-control-play control-play display-none"></i>
                 <p>${news[i].title}</p>
-                <i class="ti-arrows-vertical"></i>
+                <i class="ti-arrows-vertical arrows-vertical"></i>
             </div>
             <div class="news-content"><p>${news[i].content}</p></div>
         </div>
@@ -37,26 +37,22 @@ for(let i = 0; i < news.length;i++){
 }
 
 
-
-// get the title of the blogs
-var titles = document.getElementsByClassName('news-title');
-for(let i in titles){
-    titles[i].addEventListener('click',e => {
-        let parent = titles[i].parentNode;
-        let content = parent.querySelector('.news-content');
-        let arrowDownIco = titles[i].querySelector('.ti-arrow-down');
-        let controlPlayIco = titles[i].querySelector('.ti-control-play');
-        if(titles[i].classList.contains('open')){
-            content.classList.add('display-none');
-            titles[i].classList.remove('open');
-            arrowDownIco.classList.add('display-none');
-            controlPlayIco.classList.remove('display-none');
-            
-        }else{
-            content.classList.remove('display-none');
-            titles[i].classList.add('open');
-            arrowDownIco.classList.remove('display-none');
-            controlPlayIco.classList.add('display-none');
-        }
-    })
-}
+var controlPlays = document.querySelectorAll('.news-blog .news-title .control-play');
+controlPlays.forEach(ele =>ele.addEventListener('click', (e) =>{
+    let title = e.target.parentNode;
+    let content = title.nextElementSibling;
+    let arrowDown = title.querySelector('.arrow-down');
+    console.log(title,content,arrowDown);
+    e.target.classList.add('display-none');
+    content.classList.remove('display-none');
+    arrowDown.classList.remove('display-none');        
+}))
+var arrowDowns = document.querySelectorAll('.news-blog .news-title .arrow-down');
+arrowDowns.forEach(ele => ele.addEventListener('click',e=>{
+    let title = e.target.parentNode;
+    let content = title.nextElementSibling;
+    let controlPlay = title.querySelector('.control-play');
+    e.target.classList.add('display-none');
+    content.classList.add('display-none');
+    controlPlay.classList.remove('display-none');
+}))
