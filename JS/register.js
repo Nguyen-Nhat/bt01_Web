@@ -16,10 +16,24 @@ var emailError = document.querySelector('.mail-error');
 var registerBtn = document.getElementById('registerProduct');
 var deleteBtn = document.getElementById('deleteCustomerData');
 
+var selectProductBtn = document.querySelector('#select');
+var selectAllProductBtn = document.querySelector('#selectAll');
+var deselectProductBtn = document.querySelector('#deselect');
+var deselectAllProductBtn = document.querySelector('#deselectAll');
+
+var productRemain = document.querySelector('#main-product .listProduct-body');
+var productSelected = document.querySelector('#main-product .productSelected-body');
+var productRemainIndex = [];
+var productSelectedIndex = [];
+for(let i in products){
+    productRemainIndex.push(i);
+}
+
 var errorMessage = document.getElementsByClassName('errorMessage');
-var inputText = document.getElementsByClassName('inputText');
+var inputTexts = document.querySelectorAll('#main #main-register .inputText');
 
 var customerTable = document.querySelector('#main-list-customer .customer-table');
+
 var customerTableTitle = `
     <tr class="title-table-register">
         <th>Họ Tên</th>
@@ -85,6 +99,11 @@ function objectCustomerToColumn(object, index){
     `;
     return result;
 }
+inputTexts.forEach((ele,i)=>{
+    ele.addEventListener('input', function(e){
+        hideError(errorMessage[i]);
+    })
+})
 deleteBtn.addEventListener('click', e =>{
     customerTableData = [];
     customerTable.innerHTML = customerTableTitle;
@@ -112,7 +131,8 @@ registerBtn.addEventListener('click',e => {
     let phoneValue = phone.value.trim();
     let deliveryDateValue = deliveryDate.value;
     let emailValue = email.value.trim();
-    
+    let gender = document.querySelector('input[name="gender"]:checked').value;
+
     const phoneRegex = /^0\d{9}$/;
     const emailRegex = /^[\w-\.]+@([\w]+\.)+[\w]{2,4}$/;
     let now = new Date();
@@ -169,11 +189,91 @@ registerBtn.addEventListener('click',e => {
         deliveryDateError.innerHTML = `<span>*Ngày giao hàng không được trước ngày hiện tại</span>`
         showError(deliveryDateError);
     }
+    if(trueFormat && productSelectedIndex.length > 0){
+        let temp = deliveryDateValue.split('-');
+        deliveryDateValue = temp[2] + `/` + temp[1] + `/` + temp[0];
+        let nameProducts = [];
+        for(let i of productSelectedIndex){
+            nameProducts.push(products[i].name);
+        }
+        let object = {
+            name: usernameValue,
+            gender: gender,
+            address: addressValue,
+            deliveryDate: deliveryDateValue,
+            products: nameProducts
+        };
+        customerTableData.push(object);
+        customerTable.innerHTML += objectCustomerToColumn(object,customerTableData.length);
+    }
+    
 });
 
-for(let i in inputText){
-    let temp = inputText[i];
-    temp.addEventListener('input',e=>{
-        hideError(errorMessage[i]);
-    });
-}
+
+selectProductBtn.addEventListener('click', e=> {
+    let index = [];
+    let children = productRemain.children;
+    let i = 0;
+    for(let child of children){
+        if(child.classList.contains('selectProductItem')){
+            index.push(i);
+        }
+        i++;
+    }
+    let temp = 0;
+    for(let i of index){
+        productSelectedIndex.push(productRemainIndex[i - temp]);
+        productRemainIndex.splice(i - temp, 1);
+        children[i - temp].classList.remove('selectProductItem');
+        productSelected.appendChild(children[i - temp]);
+        temp++;
+    }
+    console.log(productSelectedIndex);
+    console.log(productRemainIndex);
+})
+deselectProductBtn.addEventListener('click',e=>{
+    let index = [];
+    let children = productSelected.children;
+    let i = 0;
+    for(let child of children){
+        if(child.classList.contains('selectProductItem')){
+            index.push(i);
+        }
+        i++;
+    }
+    let temp = 0;
+    for(let i of index){
+        productRemainIndex.push(productSelectedIndex[i - temp]);
+        productSelectedIndex.splice(i - temp, 1);
+        productRemain.appendChild(children[i - temp]);
+        children[i - temp].classList.remove('selectProductItem');
+        temp++;
+    }
+    console.log(productSelectedIndex);
+    console.log(productRemainIndex);
+})
+selectAllProductBtn.addEventListener('click', e=>{
+    while(productRemain.firstElementChild){
+        if(productRemain.firstElementChild.classList.contains('selectProductItem')){
+            productRemain.firstElementChild.classList.remove('selectProductItem')
+        }
+        productSelected.appendChild(productRemain.firstElementChild);
+    }    
+    productSelectedIndex = productSelectedIndex.concat(productRemainIndex);
+    productRemainIndex = [];
+    console.log(productSelectedIndex);
+    console.log(productRemainIndex);
+})
+
+deselectAllProductBtn.addEventListener('click', e=>{
+    while(productSelected.firstElementChild){
+        if(productSelected.firstElementChild.classList.contains('selectProductItem')){
+            productSelected.firstElementChild.classList.remove('selectProductItem')
+        }
+        productRemain.appendChild(productSelected.firstElementChild);
+    }
+    productRemainIndex = productRemainIndex.concat(productSelectedIndex);
+    productSelectedIndex = [];
+    console.log(productSelectedIndex);
+    console.log(productRemainIndex);
+})

@@ -51,13 +51,13 @@ for(let i in products){
         </div>                            
     `;
 }
-var listProduct = listProductTable.querySelectorAll('.productItem');
-for(let i in listProduct){
-    listProduct[i].addEventListener('click',e => {
-        if(listProduct[i].classList.contains('selectProductItem')){
-            listProduct[i].classList.remove('selectProductItem');
-        }else{
-            listProduct[i].classList.add('selectProductItem');
-        }
-    })
+var ProductItems = document.querySelectorAll('#main-product .productItem');
+for(let ProductItem of ProductItems){
+  ProductItem.addEventListener('click', e=>{
+    if(ProductItem.classList.contains('selectProductItem')){
+      ProductItem.classList.remove('selectProductItem')
+    }else {
+      ProductItem.classList.add('selectProductItem')
+    }
+  })
 }
