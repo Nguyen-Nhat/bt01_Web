@@ -112,6 +112,9 @@
     cursor: pointer;
     padding: 10px;
 }
+#side .news-title .arrows-vertical{
+    cursor: n-resize;
+}
 #side .news-title p{
     display: inline-block;
     font-size: 24px;
@@ -233,6 +236,7 @@
     width: 30px;
     height: 20px;
     margin: 4px 0;
+    cursor: pointer;
 }
 #main-register-product{
     display: flex;
