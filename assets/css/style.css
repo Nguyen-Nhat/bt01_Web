@@ -172,6 +172,7 @@
 
 #main-product {
     display: flex;
+    flex-flow: row wrap;
 }
 
 #main-product .listProduct,
@@ -198,7 +199,6 @@
 #main-product .productItem{
     border: 1px solid #ccc;
     border-radius: 6px;
-    height: 60px;
     margin: 4px;
     display: flex;
     justify-content: space-between;
@@ -311,6 +311,8 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    box-shadow: 0 0 5px rgba(0,0,0,0.6);
+    border-radius: 4px;
 }
 #footer .copyright{
     margin-right: 20px;

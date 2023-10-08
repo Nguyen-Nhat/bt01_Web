@@ -56,3 +56,23 @@ arrowDowns.forEach(ele => ele.addEventListener('click',e=>{
     content.classList.add('display-none');
     controlPlay.classList.remove('display-none');
 }))
+
+// var isDragArrowsVertical = false;
+// var arrowsVerticals = document.querySelectorAll('.news-blog .news-title .arrows-vertical');
+// for(let arrowsVertical of arrowsVerticals){
+//     arrowsVertical.addEventListener('mousedown',e=>{
+//         isDragArrowsVertical = true;
+//         console.log(1);
+//         let temp = e.target.parentNode.parentNode;
+//         temp.setAttribute("draggable",true);
+//     })
+//     arrowsVertical.addEventListener('mouseup',e=>{
+//         isDragArrowsVertical = false;
+//         console.log(2);
+//         let temp = e.target.parentNode.parentNode;
+//         temp.setAttribute("draggable",false);
+//     })
+//     arrowsVertical.addEventListener('mouseover',e =>{
+//       console.log(e);
+//     })
+// }
