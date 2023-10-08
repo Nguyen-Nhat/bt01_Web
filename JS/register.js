@@ -243,8 +243,8 @@ deselectProductBtn.addEventListener('click',e=>{
     for(let i of index){
         productRemainIndex.push(productSelectedIndex[i - temp]);
         productSelectedIndex.splice(i - temp, 1);
-        productRemain.appendChild(children[i - temp]);
         children[i - temp].classList.remove('selectProductItem');
+        productRemain.appendChild(children[i - temp]);
         temp++;
     }
 })
