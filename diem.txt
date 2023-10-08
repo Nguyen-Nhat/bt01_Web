@@ -9,10 +9,10 @@
 9. Xử lý kiểm tra dữ liệu phần nhập liệu : 100%
 10. Định dạng phần Danh sách sản phẩm (bao gồm dữ liệu) : 100%
 11. Xử lý chuyển sản phẩm bằng button : 100%
-12. Xử lý chuyển sản phẩm bằng mouse kéo thả : 100%
+12. Xử lý chuyển sản phẩm bằng mouse kéo thả : 50%
 13. Định dạng bảng danh sách : 100%
 14. Xử lý chức năng Đăng ký và Xóa hết : 100%
 15. đáp ứng responsive với độ phân giải 768px : 100%
 
 
-Tổng điểm : 14
+Tổng điểm : 13.5
