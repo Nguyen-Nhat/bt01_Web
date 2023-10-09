@@ -4,7 +4,7 @@
 4. Định dạng phần Footer bao gồm cả dữ liệu : 100%
 5. Định dạng phần Side bao gồm cả dữ liệu : 100%
 6. Cho phép đóng mở (thu gọn) của NEWS : 100%
-7. Cho phép thay đổi thứ tự các NEWS : 0%
+7. Cho phép thay đổi thứ tự các NEWS : 50%
 8. Định dạng phần nhập liệu : 100% 
 9. Xử lý kiểm tra dữ liệu phần nhập liệu : 100%
 10. Định dạng phần Danh sách sản phẩm (bao gồm dữ liệu) : 100%
@@ -15,4 +15,4 @@
 15. đáp ứng responsive với độ phân giải 768px : 100%
 
 
-Tổng điểm : 13.5
+Tổng điểm : 14
